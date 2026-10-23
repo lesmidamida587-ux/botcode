@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Ulang Tahun 🎂</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: white;
+            background: linear-gradient(135deg, #ff758c, #ff7eb3, #a18cd1);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 30px 20px;
+            border-radius: 25px;
+            width: 85%;
+            max-width: 380px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+            backdrop-filter: blur(10px);
+            animation: muncul 1.5s ease;
+        }
+
+        h1 {
+            font-size: 30px;
+            animation: warna 2s infinite alternate;
+        }
+
+        .kue {
+            font-size: 90px;
+            margin: 15px 0;
+            animation: goyang 2s infinite;
+        }
+
+        p {
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+        button {
+            background: #ff3366;
+            color: white;
+            border: none;
+            padding: 13px 22px;
+            border-radius: 30px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 15px;
+            box-shadow: 0 4px 10px #0003;
+        }
+
+        button:hover {
+            background: #ff004f;
+            transform: scale(1.05);
+        }
+
+        #ucapan {
+            display: none;
+            margin-top: 20px;
+            animation: muncul 1s ease;
+        }
+
+        .balon {
+            position: absolute;
+            bottom: -100px;
+            font-size: 40px;
+            animation: terbang 8s linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes terbang {
+            to {
+                transform: translateY(-120vh) rotate(20deg);
+            }
+        }
+
+        @keyframes goyang {
+            0%, 100% { transform: rotate(-5deg); }
+            50% { transform: rotate(5deg); }
+        }
+
+        @keyframes warna {
+            from { color: #fff; }
+            to { color: #fff4a3; }
+        }
+
+        @keyframes muncul {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <h1>🎉 Happy Birthday! 🎉</h1>
+
+        <div class="kue">🎂</div>
+
+        <h2 id="nama">Untuk Kamu ❤️</h2>
+
+        <p>
+            Selamat ulang tahun! 🥳<br>
+            Semoga panjang umur, sehat selalu,
+            bahagia, dan semua impianmu tercapai.
+        </p>
+
+        <button onclick="tampilkanUcapan()">
+            Buka Ucapan 🎁
+        </button>
+
+        <div id="ucapan">
+            <h2>💖 Doa Terbaik Untukmu 💖</h2>
+            <p>
+                Semoga hari ini menjadi awal dari
+                banyak kebahagiaan baru.
+                Tetap tersenyum dan jangan pernah
+                berhenti mengejar impianmu! ✨
+            </p>
+            <div style="font-size: 35px;">
+                🎁 🎈 💐 ❤️
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function tampilkanUcapan() {
+            document.getElementById("ucapan").style.display = "block";
+            document.getElementById("nama").innerText =
+                "Selamat Bertambah Usia! ❤️";
+
+            for (let i = 0; i < 20; i++) {
+                const emoji = document.createElement("div");
+                emoji.innerText = ["🎈", "🎉", "✨", "💖"][
+                    Math.floor(Math.random() * 4)
+                ];
+                emoji.style.position = "fixed";
+                emoji.style.left = Math.random() * 100 + "vw";
+                emoji.style.top = "-50px";
+                emoji.style.fontSize = "30px";
+                emoji.style.zIndex = "10";
+                emoji.style.transition = "transform 3s ease-in, opacity 3s";
+                document.body.appendChild(emoji);
+
+                setTimeout(() => {
+                    emoji.style.transform =
+                        `translateY(${window.innerHeight + 100}px) rotate(360deg)`;
+                    emoji.style.opacity = "0";
+                }, 50);
+
+                setTimeout(() => emoji.remove(), 3200);
+            }
+        }
+
+        // Animasi balon terbang
+        for (let i = 0; i < 12; i++) {
+            const balon = document.createElement("div");
+            balon.className = "balon";
+            balon.innerText = ["🎈", "🎈", "🎀"][
+                Math.floor(Math.random() * 3)
+            ];
+            balon.style.left = Math.random() * 100 + "vw";
+            balon.style.animationDelay = Math.random() * 8 + "s";
+            balon.style.animationDuration = (6 + Math.random() * 6) + "s";
+            document.body.appendChild(balon);
+        }
+    </script>
+
+</body>
+</html>
+
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+  
+</body>
+
+</html>
